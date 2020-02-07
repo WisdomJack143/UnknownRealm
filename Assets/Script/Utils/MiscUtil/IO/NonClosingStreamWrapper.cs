@@ -1,6 +1,5 @@
 using System;
-using System.IO;
-using System.Runtime.Remoting;
+using System.IO; 
 
 namespace MiscUtil.IO
 {
@@ -146,10 +145,7 @@ namespace MiscUtil.IO
 		/// </summary>
 		/// <param name="requestedType">The Type of the object that the new ObjRef will reference.</param>
 		/// <returns>n/a</returns>
-		public override ObjRef CreateObjRef(Type requestedType)
-		{
-			throw new NotSupportedException();
-		}
+ 
 
 		/// <summary>
 		/// Waits for the pending asynchronous read to complete.
