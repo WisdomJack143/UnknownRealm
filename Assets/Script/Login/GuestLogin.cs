@@ -7,9 +7,7 @@ public class GuestLogin :MyBehaviour
 
         private void Start()
         {
-                    MatchvsResponse.loginResponse loginResponse = (LoginRsp rsp)=>{
-                        log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"+rsp.ToString());};
-            getEngine().listen("loginResponse", loginResponse);
+                    
         }
         void Update()
     {

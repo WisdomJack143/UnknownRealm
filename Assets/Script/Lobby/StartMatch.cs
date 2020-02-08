@@ -1,26 +1,33 @@
 ﻿using UnityEngine.UI;
 using Matchvs;
+using UnityEngine;
 namespace UnknownRealm.Lobby { 
 public class StartMatch :MyBehaviour
 {
        private bool matching = false;
-      // public Text label;
+      public Text label;
         private float counter = 0;
-    public void onClick()
+
+        private void Start()
+        {
+
+          //  getEngine().listen("", ((Roomrsp) => { }));
+        }
+        public void onClick()
     {
-            log("Clicked");
-            if (!matching) {
+            
+            if (matching) {
                 this.GetComponentInChildren<Text>().text = "开始匹配";
+                label.text = "没有匹配";
                 matching = true;
-                log("start match");
-                getEngine().joinRandomRoom(4);
+                getEngine().leaveRoom(); 
                 return;
             }
 
-            matching = false;
-            this.GetComponentInChildren<Text>().text = "停止匹配";
-            log("stop match");
-            getEngine().leaveRoom();
+            matching = true;
+            this.GetComponentInChildren<Text>().text = "停止匹配"; 
+            getEngine().joinRandomRoom(4);
+        
          
             
     }
@@ -28,7 +35,8 @@ public class StartMatch :MyBehaviour
         {
             if (matching)
             {
-                
+                counter = counter + Time.deltaTime;
+                label.text = "匹配时间" + counter.ToString("0.0");
             }
         
         }
