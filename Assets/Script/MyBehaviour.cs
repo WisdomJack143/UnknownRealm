@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Matchvs;
+using UnknownRealm.Match;
 using System;
 
 namespace UnknownRealm
@@ -17,6 +18,9 @@ namespace UnknownRealm
         }
         protected UnknownRealm getApp() {
             return UnknownRealm.getInstance();
+        }
+        protected GameManager getGame() {
+            return GameManager.getInstance();
         }
         protected Config getCfg() {
  
